@@ -27,7 +27,7 @@ class DollarRepositoryImpl(
     }
 
     // Si necesitas el Flow para updates en tiempo real
-    fun getDollarRatesFlow(): Flow<DollarModel> = remoteDataSource.getDollarUpdates()
+    override fun getDollarRatesFlow(): Flow<DollarModel> = remoteDataSource.getDollarUpdates()
 
     override suspend fun saveDollarRates(rates: DollarModel) {
         localDataSource.saveDollarRate(rates)

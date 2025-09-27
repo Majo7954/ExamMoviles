@@ -5,7 +5,7 @@ import com.calyrsoft.ucbp1.core.AuthManager
 import com.calyrsoft.ucbp1.features.dollar.data.database.AppRoomDatabase
 import com.calyrsoft.ucbp1.features.dollar.data.datasource.DollarLocalDataSource
 import com.calyrsoft.ucbp1.features.dollar.data.repository.DollarRepositoryImpl
-import com.calyrsoft.ucbp1.features.dollar.domain.repository.IDollarRepository
+import com.calyrsoft.ucbp1.features.dollar.domain.repository.DollarRepository
 import com.calyrsoft.ucbp1.features.dollar.domain.usecase.FetchDollarUseCase
 import com.calyrsoft.ucbp1.features.dollar.presentation.DollarHistoryViewModel
 import com.calyrsoft.ucbp1.features.dollar.presentation.DollarViewModel
@@ -76,7 +76,7 @@ val appModule = module {
     single<LoginRepository> { LoginRepositoryImpl() }
     single { com.calyrsoft.ucbp1.features.dollar.data.datasource.RealTimeRemoteDataSource() }
     single<ProfileRepository> { ProfileRepositoryImpl() }
-    single<IDollarRepository> { DollarRepositoryImpl(get(), get()) }
+    single<DollarRepository> { DollarRepositoryImpl(get(), get()) }
     single { GithubRemoteDataSource(get()) }
     single<IGithubRepository> { GithubRepository(get()) }
     single { MovieRemoteDataSource(get()) }
