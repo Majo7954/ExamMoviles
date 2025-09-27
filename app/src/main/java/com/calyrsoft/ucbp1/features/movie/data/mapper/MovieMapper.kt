@@ -1,0 +1,31 @@
+package com.calyrsoft.ucbp1.features.movies.data.mapper
+
+import com.calyrsoft.ucbp1.features.movies.data.database.entity.MovieEntity
+import com.calyrsoft.ucbp1.features.movies.domain.model.Movie
+fun MovieEntity.toDomain(): Movie {
+    return Movie(
+        id = id,
+        title = title,
+        overview = overview,
+        posterPath = posterPath,
+        backdropPath = backdropPath,
+        releaseDate = releaseDate,
+        voteAverage = voteAverage ?: 0.0,
+        voteCount = voteCount ?: 0,
+        isLiked = isLiked
+    )
+}
+
+fun Movie.toEntity(): MovieEntity {
+    return MovieEntity(
+        id = id,
+        title = title,
+        overview = overview,
+        posterPath = posterPath,
+        backdropPath = backdropPath,
+        releaseDate = releaseDate,
+        voteAverage = voteAverage,
+        voteCount = voteCount,
+        isLiked = isLiked
+    )
+}

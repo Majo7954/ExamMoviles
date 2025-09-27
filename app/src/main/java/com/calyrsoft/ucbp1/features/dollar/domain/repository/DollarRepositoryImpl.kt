@@ -15,7 +15,6 @@ class DollarRepositoryImpl(
     override fun getDollar(): Flow<DollarModel> {
         return realTimeRemoteDataSource.getDollarUpdates()
             .onEach { dollar ->
-                // CORRECCIÓN: Usar saveDollarRate en lugar de insert
                 localDataSource.saveDollarRate(dollar)
             }
     }

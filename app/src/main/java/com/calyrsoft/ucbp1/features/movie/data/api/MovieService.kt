@@ -1,4 +1,4 @@
-package com.calyrsoft.ucbp1.features.movies.data.api
+package com.calyrsoft.ucbp1.features.movie.data.api
 
 
 import com.calyrsoft.ucbp1.features.movies.data.api.dto.MoviesResponseDto
