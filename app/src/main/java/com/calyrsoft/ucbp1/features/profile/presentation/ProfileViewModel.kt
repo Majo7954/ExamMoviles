@@ -26,9 +26,9 @@ class ProfileViewModel(
                 result.onSuccess { profile ->
                     _state.value = _state.value.copy(
                         isLoading = false,
-                        userName = profile.name,
-                        userEmail = profile.email,
-                        avatarUrl = profile.avatarUrl
+                        userName = profile.name.value,
+                        userEmail = profile.email.value,
+                        avatarUrl = profile.avatarUrl.value
                     )
                 }.onFailure { e ->
                     _state.value = _state.value.copy(

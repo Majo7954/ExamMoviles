@@ -1,8 +1,11 @@
 package com.calyrsoft.ucbp1.features.profile.domain.model
 
+
+import com.calyrsoft.ucbp1.features.profile.domain.model.value.*
+
 data class Profile(
-    val id: String,
-    val name: String,
-    val email: String,
-    val avatarUrl: String? = null
+    val id: ProfileId,
+    val name: ProfileName,
+    val email: ProfileEmail,
+    val avatarUrl: ProfileAvatarUrl = ProfileAvatarUrl(null)
 )
